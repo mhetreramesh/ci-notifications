@@ -31,6 +31,4 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 Go to http://example.com/register and create a user
 
 ## Usage
-It is just a starter for user login logout register functionalities.
-
-Extend the user controller or keep it as it is and write your own application with Codeigniter.
+When you register a user & login to the system, you will see notifications
