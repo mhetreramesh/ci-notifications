@@ -1,5 +1,5 @@
-# codeigniter-login-logout-register
-A user login, logout, register start for Codeigniter 3
+# User Notifications System using CodeIgniter
+A user login, logout, register & notifications system using Codeigniter 3
 
 ## Installation
 1. Open /application/config/database.php and edit with your database settings
