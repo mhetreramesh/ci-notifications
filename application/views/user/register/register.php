@@ -70,6 +70,7 @@
 						<input type="submit" class="btn btn-lg btn-success btn-block" value="Register">
 					</div>
 				</form>
+				<span>Already have an account? <a href="login">Sign In</a></span>
 			</div>
 			</div>
 			</div>

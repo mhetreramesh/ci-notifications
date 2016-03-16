@@ -54,6 +54,7 @@
 						<input type="submit" class="btn btn-lg btn-success btn-block" value="Login">
 					</div>
 				</form>
+				<span>Need an account? <a href="register">Sign Up</a></span>
 			</div>
 					</div>
 				</div>
