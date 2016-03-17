@@ -30,17 +30,20 @@ class User_model extends CI_Model {
 	 * @param mixed $password
 	 * @return bool true on success, false on failure
 	 */
-	public function create_user($username, $email, $password) {
+	public function create_user($name, $username, $email, $password) {
 		
 		$data = array(
+			'name'       => $name,
 			'username'   => $username,
 			'email'      => $email,
 			'password'   => $this->hash_password($password),
 			'created_at' => date('Y-m-j H:i:s'),
 		);
 		
-		return $this->db->insert('users', $data);
-		
+		if ( $this->db->insert('users', $data) ) {
+            return $this->db->insert_id();
+        }
+		return false;
 	}
 	
 	/**

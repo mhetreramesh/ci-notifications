@@ -18,62 +18,31 @@
 	<ul class="nav navbar-top-links navbar-right">
 		<li class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-				<span class="top-label label label-warning">5</span>  <i class="fa fa-bell fa-3x"></i>
+				<span class="top-label label label-warning"><?php echo $notifications_count; ?></span>  <i class="fa fa-bell fa-3x"></i>
 			</a>
 			<!-- dropdown alerts-->
-			<ul class="dropdown-menu dropdown-alerts">
-				<li>
-					<a href="#">
-						<div>
-							<i class="fa fa-comment fa-fw"></i>New Comment
-							<span class="pull-right text-muted small">4 minutes ago</span>
-						</div>
-					</a>
-				</li>
-				<li class="divider"></li>
-				<li>
-					<a href="#">
-						<div>
-							<i class="fa fa-twitter fa-fw"></i>3 New Followers
-							<span class="pull-right text-muted small">12 minutes ago</span>
-						</div>
-					</a>
-				</li>
-				<li class="divider"></li>
-				<li>
-					<a href="#">
-						<div>
-							<i class="fa fa-envelope fa-fw"></i>Message Sent
-							<span class="pull-right text-muted small">4 minutes ago</span>
-						</div>
-					</a>
-				</li>
-				<li class="divider"></li>
-				<li>
-					<a href="#">
-						<div>
-							<i class="fa fa-tasks fa-fw"></i>New Task
-							<span class="pull-right text-muted small">4 minutes ago</span>
-						</div>
-					</a>
-				</li>
-				<li class="divider"></li>
-				<li>
-					<a href="#">
-						<div>
-							<i class="fa fa-upload fa-fw"></i>Server Rebooted
-							<span class="pull-right text-muted small">4 minutes ago</span>
-						</div>
-					</a>
-				</li>
-				<li class="divider"></li>
-				<li>
-					<a class="text-center" href="#">
-						<strong>See All Alerts</strong>
-						<i class="fa fa-angle-right"></i>
-					</a>
-				</li>
-			</ul>
+            <ul class="dropdown-menu dropdown-messages">
+                <?php foreach($notifications as $notification) { ?>
+                <li>
+                    <a href="#">
+                        <div>
+                            <strong><span class=" label label-info">System</span></strong>
+                                <span class="pull-right text-muted">
+                                    <em>Yesterday</em>
+                                </span>
+                        </div>
+                        <div><?php echo $notification->content; ?></div>
+                    </a>
+                </li>
+                <?php } ?>
+                <li class="divider"></li>
+                <li>
+                    <a class="text-center" href="#">
+                        <strong>Read All Messages</strong>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
 			<!-- end dropdown-alerts -->
 		</li>
 
@@ -113,7 +82,7 @@
 						<img src="assets/img/user.jpg" alt="">
 					</div>
 					<div class="user-info">
-						<div>Jonny <strong>Deen</strong></div>
+						<div><strong><?php echo $this->session->name; ?></strong></div>
 						<div class="user-text-online">
 							<span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
 						</div>
