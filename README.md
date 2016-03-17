@@ -27,6 +27,19 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
     PRIMARY KEY (id),
     KEY `ci_sessions_timestamp` (`timestamp`)
 );
+
+
+CREATE TABLE IF NOT EXISTS `notifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `type_id` int(5) NOT NULL COMMENT '1 - Messages, 2 - Lead Generated, 3 -Task Assigned',
+  `content` varchar(255) NOT NULL,
+  `generated_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0 - Pending, 1 - Viewed',
+  `viewed_on` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 ```
 Go to http://example.com/register and create a user
 

@@ -95,6 +95,8 @@ class User extends CI_Controller {
 				$session_data['is_admin']     = (bool)$user->is_admin;
 
 				$this->session->set_userdata($session_data);
+				$this->load->model('notifications_model');
+				$this->notifications_model->create_notification((int)$user->id, 1, 'Welcome back to system!');
 				redirect('dashboard');
 			} else {
 				// login failed
