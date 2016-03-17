@@ -41,7 +41,23 @@ class Notifications_model extends CI_Model {
 		);
 		
 		return $this->db->insert('notifications', $data);
-		
+	}
+
+
+	/**
+	 * get_unread_notifications function.
+	 *
+	 * @access public
+	 * @param mixed $user_id
+	 * @return object the notification object
+	 */
+	public function get_unread_notifications($user_id) {
+
+		$this->db->from('notifications');
+		$this->db->where('user_id', $user_id);
+		$this->db->where('status', 0);
+		return $this->db->get()->result();
+
 	}
 	
 }
