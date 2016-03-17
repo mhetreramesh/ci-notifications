@@ -30,11 +30,11 @@ class Notifications_model extends CI_Model {
 	 * @param string $content
 	 * @return bool true on success, false on failure
 	 */
-	public function create_notification($user_id, $type_id, $content) {
+	public function create_notification($user_id, $from, $content) {
 		
 		$data = array(
 			'user_id'   => $user_id,
-			'type_id'      => $type_id,
+			'from'      => $from,
 			'content'   => $content,
 			'generated_on' => date('Y-m-j H:i:s'),
 			'status' => 0
@@ -55,6 +55,7 @@ class Notifications_model extends CI_Model {
 
 		$this->db->where('user_id', $user_id);
 		$this->db->where('status', 0);
+        $this->db->order_by('id', 'desc');
 		return $this->db->get('notifications', 5)->result();
 
 	}

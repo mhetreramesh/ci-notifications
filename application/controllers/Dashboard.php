@@ -30,8 +30,8 @@ class Dashboard extends CI_Controller
      */
     public function index()
     {
-        $notifications          = $this->notifications_model->get_unread_notifications($this->session->user_id);
-        $notifications_count    = $this->notifications_model->get_unread_notifications_count($this->session->user_id);
+        $notifications                  = $this->notifications_model->get_unread_notifications($this->session->user_id);
+        $notifications_count            = $this->notifications_model->get_unread_notifications_count($this->session->user_id);
         $data['title']                  = 'Dashboard';
         $data['notifications']          = $notifications;
         $data['notifications_count']    = $notifications_count;

@@ -47,7 +47,7 @@ class User extends CI_Controller {
 			$password = $this->input->post('password');
 			
 			if ($user_id = $this->user_model->create_user($name, $username, $email, $password)) {
-                $this->notifications_model->create_notification((int)$user_id, 1, 'Welcome to the amazing notifications system!');
+                $this->notifications_model->create_notification((int)$user_id, 'System', 'Welcome to the amazing notifications system!');
 				redirect('login');
 			} else {
 				// user creation failed, this should never happen
@@ -95,7 +95,10 @@ class User extends CI_Controller {
 				$session_data['is_admin']     = (bool)$user->is_admin;
 
 				$this->session->set_userdata($session_data);
-				$this->notifications_model->create_notification((int)$user->id, 1, 'Welcome back <b>' . $user->name . '</b> to admin panel!');
+				$this->notifications_model->create_notification((int)$user->id, 'Authenticator', 'Welcome back <b>' . $user->name . '</b> to admin panel!');
+				$this->notifications_model->create_notification((int)$user->id, 'Lead Management', '<b>'.rand(5, 15).'</b> new leads generated in our system.');
+				$this->notifications_model->create_notification((int)$user->id, 'Twitter', '<b>' . get_random_name() . '</b> & ' . rand(2, 4) . ' others follows us on twiter.');
+				$this->notifications_model->create_notification((int)$user->id, 'Facebook', '<b>' . get_random_name() . '</b> & ' . rand(5, 15) . ' others commented on our latest facebbok post.');
 				redirect('dashboard');
 			} else {
 				// login failed

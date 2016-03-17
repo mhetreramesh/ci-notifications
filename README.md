@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 CREATE TABLE IF NOT EXISTS `notifications` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `user_id` int(11) NOT NULL,
-    `type_id` int(5) NOT NULL COMMENT '1 - Messages, 2 - Lead Generated, 3 -Task Assigned',
+    `from` varchar(255) NOT NULL,
     `content` varchar(255) NOT NULL,
     `generated_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0 - Pending, 1 - Viewed',

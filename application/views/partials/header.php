@@ -30,9 +30,9 @@
                 <li>
                     <a href="#">
                         <div>
-                            <strong><span class=" label label-info">System</span></strong>
+                            <strong><span class=" label label-info"><?php echo $notification->from; ?></span></strong>
                                 <span class="pull-right text-muted">
-                                    <em><?php echo get_day_name(date('Y-m-d h:s:i')); ?></em>
+                                    <em><?php echo get_day_name($notification->generated_on); ?></em>
                                 </span>
                         </div>
                         <div><?php echo $notification->content; ?></div>
@@ -44,7 +44,7 @@
                 <li class="divider"></li>
                 <li>
                     <a class="text-center" href="#">
-                        <strong>Read All Messages</strong>
+                        <strong>Read All Notifications</strong>
                         <i class="fa fa-angle-right"></i>
                     </a>
                 </li>
@@ -86,7 +86,7 @@
 				<!-- user image section-->
 				<div class="user-section">
 					<div class="user-section-inner">
-						<img src="assets/img/user.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/user.jpg" alt="">
 					</div>
 					<div class="user-info">
 						<div><strong><?php echo $this->session->name; ?></strong></div>
