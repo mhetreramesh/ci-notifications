@@ -2,6 +2,7 @@
 
 if( !function_exists('get_random_name') ) {
 
+    //ToDo: Instead of getting random names from the set we can use PHP Faker for that to get random user name
     function get_random_name() {
         $names = array(
             'Johnny Depp',
