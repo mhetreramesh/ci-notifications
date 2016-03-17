@@ -22,19 +22,25 @@
 			</a>
 			<!-- dropdown alerts-->
             <ul class="dropdown-menu dropdown-messages">
-                <?php foreach($notifications as $notification) { ?>
+                <?php $count = 1;
+                foreach($notifications as $notification) { ?>
+                <?php if($count != 1) { ?>
+                    <li class="divider"></li>
+                 <?php } ?>
                 <li>
                     <a href="#">
                         <div>
                             <strong><span class=" label label-info">System</span></strong>
                                 <span class="pull-right text-muted">
-                                    <em>Yesterday</em>
+                                    <em><?php echo get_day_name(date('Y-m-d h:s:i')); ?></em>
                                 </span>
                         </div>
                         <div><?php echo $notification->content; ?></div>
                     </a>
                 </li>
-                <?php } ?>
+                <?php $count ++;
+                } ?>
+                <?php if ($notifications_count > count($notifications)) { ?>
                 <li class="divider"></li>
                 <li>
                     <a class="text-center" href="#">
@@ -42,6 +48,7 @@
                         <i class="fa fa-angle-right"></i>
                     </a>
                 </li>
+                <?php } ?>
             </ul>
 			<!-- end dropdown-alerts -->
 		</li>
