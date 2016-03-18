@@ -1,9 +1,33 @@
-# User Notifications System using CodeIgniter
-A user login, logout, register & notifications system using Codeigniter 3
+# User Notifications System
 
-## Installation
+```sh
+ * Introduction
+ * Requirements
+ * Installation
+ * Usage
+ * Maintainers
+ ```
+ INTRODUCTION
+------------
+This project contains an user login, logout, register & notifications system using Codeigniter 3.  This is uses PSR-4 autoloader.
+
+ * For live demo of the project, visit the link:
+   http://52.89.235.194/ci-notifications/index.php/login
+
+REQUIREMENTS
+------------
+
+This project requires following tools:
+
+ * php - 5.4.* (http://php.net/)
+ * MySQL - 5.5.* (https://www.mysql.com/)
+ * Codeigniter Framework - 3.0.5 (https://www.codeigniter.com/)
+
+INSTALLATION
+------------
 1. Open /application/config/database.php and edit with your database settings
-2. On your database, open a SQL terminal paste this and execute:
+2. Open /application/config/config.php (Change neccessary settings if required, by default nothing required to change)
+3. In your database, open a SQL terminal paste this and execute:
 
 ```sql
 
@@ -43,7 +67,17 @@ CREATE TABLE IF NOT EXISTS `notifications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 ```
-Go to http://example.com/register and create a user (If url don't work then add index.php in the url)
 
-## Usage
-When you register a user & login to the system, you will see notifications
+USAGE
+------------
+* Register a new user 
+* Login using new user 
+* Once login you will see auto generated notifications on the upper right corner
+* When click on any specific notification it will mark as read automatically & removed from the list
+* User can mark all notifications as read in single click
+* User can generate new notification using generate notifications button. (This will create random notifications'
+
+MAINTAINERS
+------------
+Current mainttainer:
+* Ramesh M - https://github.com/ramesh-cuelogic
