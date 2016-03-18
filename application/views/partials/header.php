@@ -1,4 +1,5 @@
 <!-- navbar top -->
+<script src="<?= base_url('assets/plugins/jquery-1.10.2.js') ?>"></script>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
 	<!-- navbar-header -->
 	<div class="navbar-header">
@@ -15,62 +16,11 @@
 	</div>
 	<!-- end navbar-header -->
 	<!-- navbar-top-links -->
-	<ul class="nav navbar-top-links navbar-right">
-		<li class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-				<span class="top-label label label-warning" id="notifications_count"><?php echo $notifications_count; ?></span>  <i class="fa fa-bell fa-3x"></i>
-			</a>
-			<!-- dropdown alerts-->
-            <ul class="dropdown-menu dropdown-messages">
-                <?php $count = 1;
-                foreach($notifications as $notification) { ?>
-                <?php if($count != 1) { ?>
-                    <li class="divider"></li>
-                 <?php } ?>
-                <li>
-                    <a href="#">
-                        <div>
-                            <strong><span class=" label label-info"><?php echo $notification->from; ?></span></strong>
-                                <span class="pull-right text-muted">
-                                    <em><?php echo get_day_name($notification->generated_on); ?></em>
-                                </span>
-                        </div>
-                        <div><?php echo $notification->content; ?></div>
-                    </a>
-                </li>
-                <?php $count ++;
-                } ?>
-                <?php if ($notifications_count > count($notifications)) { ?>
-                <li class="divider"></li>
-                <li>
-                    <a class="text-center" href="#">
-                        <strong>Read All Notifications</strong>
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </li>
-                <?php } ?>
-            </ul>
-			<!-- end dropdown-alerts -->
-		</li>
-
-		<li class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-				<i class="fa fa-user fa-3x"></i>
-			</a>
-			<!-- dropdown user-->
-			<ul class="dropdown-menu dropdown-user">
-				<li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
-				</li>
-				<li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
-				</li>
-				<li class="divider"></li>
-				<li><a href="logout"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
-				</li>
-			</ul>
-			<!-- end dropdown-user -->
-		</li>
-		<!-- end main dropdown -->
-	</ul>
+	<div id="notifications-container">
+		<ul class="nav navbar-top-links navbar-right" id="notifications-liting">
+			<?php $this->load->view( 'partials/notifications.php' ); ?>
+		</ul>
+	</div>
 	<!-- end navbar-top-links -->
 
 </nav>

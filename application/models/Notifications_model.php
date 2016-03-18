@@ -74,5 +74,28 @@ class Notifications_model extends CI_Model {
         $this->db->where('status', 0);
         return $this->db->count_all_results();
     }
+
+	/**
+	 * mark_notification_as_read function.
+	 *
+	 * @access public
+	 * @param int $notification_id
+	 * @param int $user_id
+	 * @return bool true on success, false on failure
+	 */
+	public function mark_notification_as_read($notification_id, $user_id) {
+
+		$data = array(
+			'status' => 1,
+			'viewed_on' => date('Y-m-j H:i:s')
+		);
+		if($notification_id === 'all') {
+			$this->db->where('user_id', $user_id);
+			$this->db->where('status', 0);
+		} else {
+			$this->db->where('id', $notification_id);
+		}
+		return $this->db->update('notifications', $data);
+	}
 	
 }

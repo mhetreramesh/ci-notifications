@@ -23,7 +23,7 @@ class Notifications extends CI_Controller
     }
 
     /**
-     * index function.
+     * generate function.
      *
      * @access public
      * @return void
@@ -34,5 +34,19 @@ class Notifications extends CI_Controller
         $this->notifications_model->create_notification((int)$this->session->user_id, 'Twitter', '<b>' . get_random_name() . '</b> & ' . rand(2, 4) . ' others follows us on twiter.');
         $this->notifications_model->create_notification((int)$this->session->user_id, 'Facebook', '<b>' . get_random_name() . '</b> & ' . rand(5, 15) . ' others liked our latest facebbok post.');
         redirect('dashboard');
+    }
+
+    /**
+     * read function.
+     *
+     * @access public
+     * @return void
+     */
+    public function read($id)
+    {
+        $this->notifications_model->mark_notification_as_read($id, $this->session->user_id);
+        $data['notifications']          = $this->notifications_model->get_unread_notifications($this->session->user_id);
+        $data['notifications_count']    = $this->notifications_model->get_unread_notifications_count($this->session->user_id);
+        $this->load->view('partials/notifications.php', $data);
     }
 }
