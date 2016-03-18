@@ -10,7 +10,7 @@
 		</button>
 		<a class="navbar-brand" href="/dashboard">
 			<!--<img src="assets/img/logo.png" alt="" />-->
-			<span class="logo">Notification System</span>
+			<span class="logo">VegFru Notifications</span>
 		</a>
 	</div>
 	<!-- end navbar-header -->
@@ -18,7 +18,7 @@
 	<ul class="nav navbar-top-links navbar-right">
 		<li class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-				<span class="top-label label label-warning"><?php echo $notifications_count; ?></span>  <i class="fa fa-bell fa-3x"></i>
+				<span class="top-label label label-warning" id="notifications_count"><?php echo $notifications_count; ?></span>  <i class="fa fa-bell fa-3x"></i>
 			</a>
 			<!-- dropdown alerts-->
             <ul class="dropdown-menu dropdown-messages">
@@ -110,46 +110,46 @@
 				<!--end search section-->
 			</li>
 			<li class="selected">
-				<a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+				<a href="#"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
 			</li>
 			<li>
 				<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
 					<li>
-						<a href="flot.html">Flot Charts</a>
+						<a href="#">Flot Charts</a>
 					</li>
 					<li>
-						<a href="morris.html">Morris Charts</a>
+						<a href="#">Morris Charts</a>
 					</li>
 				</ul>
 				<!-- second-level-items -->
 			</li>
 			<li>
-				<a href="timeline.html"><i class="fa fa-flask fa-fw"></i>Timeline</a>
+				<a href="#"><i class="fa fa-flask fa-fw"></i>Timeline</a>
 			</li>
 			<li>
-				<a href="tables.html"><i class="fa fa-table fa-fw"></i>Tables</a>
+				<a href="#"><i class="fa fa-table fa-fw"></i>Tables</a>
 			</li>
 			<li>
-				<a href="forms.html"><i class="fa fa-edit fa-fw"></i>Forms</a>
+				<a href="#"><i class="fa fa-edit fa-fw"></i>Forms</a>
 			</li>
 			<li>
 				<a href="#"><i class="fa fa-wrench fa-fw"></i>UI Elements<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
 					<li>
-						<a href="panels-wells.html">Panels and Wells</a>
+						<a href="#">Panels and Wells</a>
 					</li>
 					<li>
-						<a href="buttons.html">Buttons</a>
+						<a href="#">Buttons</a>
 					</li>
 					<li>
-						<a href="notifications.html">Notifications</a>
+						<a href="#">Notifications</a>
 					</li>
 					<li>
-						<a href="typography.html">Typography</a>
+						<a href="#">Typography</a>
 					</li>
 					<li>
-						<a href="grid.html">Grid</a>
+						<a href="#">Grid</a>
 					</li>
 				</ul>
 				<!-- second-level-items -->
