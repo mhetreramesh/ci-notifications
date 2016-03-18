@@ -80,4 +80,4 @@ USAGE
 MAINTAINERS
 ------------
 Current mainttainer:
-* Ramesh M - https://github.com/ramesh-cuelogic
+* Ramesh M - https://github.com/mhetreramesh
